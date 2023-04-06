@@ -30,7 +30,7 @@
                     </div>
                     <div class="col-4">
                         <div class="mb-3">
-                            <label for="yoastKeywords" class="form-label">Yoast Keywords</label>
+                            <label for="yoastKeywords" class="form-label">Yoast Keywords </label>
                             <input type="text" class="form-control" id="yoastKeywords" name="yoastKeywords">
                         </div>
                     </div>
