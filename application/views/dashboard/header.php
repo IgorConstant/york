@@ -15,6 +15,10 @@
     <!-- FontAwesome -->
     <script src="https://kit.fontawesome.com/7bc0885a91.js"></script>
 
+    <!-- Upload -->
+    <link rel="stylesheet" href="<?php echo base_url('assets/dashboard/js/upload/jquery.fileuploader-theme-thumbnails.css') ?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/dashboard/js/upload/jquery.fileuploader.css') ?>">
+
     <!-- Data Table -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css" />
 
@@ -68,6 +72,12 @@
                         </li>
                         <li class="nav-item">
                             <?php echo anchor('newsletter', '<span><i class="fas fa-laptop-code"></i> Newsletter</span>', array('class' => 'nav-link')) ?>
+                        </li>
+                        <li class="nav-item">
+                            <?php echo anchor('blog_admin', '<span><i class="fas fa-laptop-code"></i> Blog</span>', array('class' => 'nav-link')) ?>
+                        </li>
+                        <li class="nav-item">
+                            <?php echo anchor('politica_admin', '<span><i class="fas fa-laptop-code"></i> Politica de Priv.</span>', array('class' => 'nav-link')) ?>
                         </li>
                     </ul>
 
