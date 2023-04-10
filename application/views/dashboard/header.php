@@ -71,7 +71,7 @@
                             <?php echo anchor('galeria', '<span><i class="fas fa-laptop-code"></i> Galeria</span>', array('class' => 'nav-link')) ?>
                         </li>
                         <li class="nav-item">
-                            <?php echo anchor('newsletter', '<span><i class="fas fa-laptop-code"></i> Newsletter</span>', array('class' => 'nav-link')) ?>
+                            <?php echo anchor('newsletter_admin', '<span><i class="fas fa-laptop-code"></i> Newsletter</span>', array('class' => 'nav-link')) ?>
                         </li>
                         <li class="nav-item">
                             <?php echo anchor('blog_admin', '<span><i class="fas fa-laptop-code"></i> Blog</span>', array('class' => 'nav-link')) ?>
