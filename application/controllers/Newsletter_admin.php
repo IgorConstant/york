@@ -40,6 +40,13 @@ class Newsletter_admin extends CI_Controller
     }
 
 
+    public function cadastraremail()
+    {
+        
+        
+    }
+
+
     public function exportarplanilha()
     {
 

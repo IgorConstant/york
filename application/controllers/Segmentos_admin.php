@@ -41,6 +41,7 @@ class Segmentos_admin extends CI_Controller
         $this->form_validation->set_rules('yoastDesc', 'Yoast Descrição', 'trim|required');
         $this->form_validation->set_rules('yoastKeywords', 'Yoast Keywords', 'trim|required');
         $this->form_validation->set_rules('descSegmentacao', 'Descrição Segmentação', 'trim|required');
+        $this->form_validation->set_rules('aplicacaoSegmentacao', 'Aplicação Segmentação', 'trim|required');
 
 
         if ($this->form_validation->run() == TRUE) {
@@ -63,6 +64,7 @@ class Segmentos_admin extends CI_Controller
                 $inputAddSegmento['yoast_description'] = $this->input->post('yoastDesc');
                 $inputAddSegmento['yoast_keywords'] = $this->input->post('yoastKeywords');
                 $inputAddSegmento['desc_segmentacao'] = $this->input->post('descSegmentacao');
+                $inputAddSegmento['aplicacao_segmento'] = $this->input->post('aplicacaoSegmentacao');
                 $inputAddSegmento['foto_destaque'] = $this->upload->data('file_name');
 
 
@@ -100,6 +102,8 @@ class Segmentos_admin extends CI_Controller
         $this->form_validation->set_rules('yoastDesc', 'Yoast Descrição', 'trim|required');
         $this->form_validation->set_rules('yoastKeywords', 'Yoast Keywords', 'trim|required');
         $this->form_validation->set_rules('descSegmentacao', 'Descrição Segmentação', 'trim|required');
+        $this->form_validation->set_rules('aplicacaoSegmentacao', 'Aplicação Segmentação', 'trim|required');
+
 
         if ($this->form_validation->run() == TRUE) {
 
@@ -120,6 +124,7 @@ class Segmentos_admin extends CI_Controller
             $inputEditSegmento['yoast_description'] = $this->input->post('yoastDesc');
             $inputEditSegmento['yoast_keywords'] = $this->input->post('yoastKeywords');
             $inputEditSegmento['desc_segmentacao'] = $this->input->post('descSegmentacao');
+            $inputEditSegmento['aplicacao_segmento'] = $this->input->post('aplicacaoSegmentacao');
 
             if ($nomeImg) {
                 $inputEditSegmento['foto_destaque'] = $nomeImg;

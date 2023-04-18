@@ -36,6 +36,14 @@
                             </textarea>
                         </div>
                     </div>
+                    <div class="col-12">
+                        <div class="mb-4">
+                            <label for="aplicacaoSegmento" class="form-label">Aplicação da Segmentação</label>
+                            <textarea id="aplicacaoSegmento" class="form-control" name="aplicacaoSegmentacao">
+                                <?php echo $query->aplicacao_segmento ?>
+                            </textarea>
+                        </div>
+                    </div>
                     <div class="form-group">
                         <?= form_label('Destaque') ?>
                         <br />

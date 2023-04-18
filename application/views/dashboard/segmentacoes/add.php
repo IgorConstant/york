@@ -40,6 +40,12 @@
                             <textarea id="editor1" class="form-control" name="descSegmentacao" placeholder="Add Body"></textarea>
                         </div>
                     </div>
+                    <div class="col-12">
+                        <div class="mb-4">
+                            <label for="aplicacaoSegmento" class="form-label">Aplicação da Segmentação</label>
+                            <textarea id="aplicacaoSegmento" class="form-control" name="aplicacaoSegmentacao"></textarea>
+                        </div>
+                    </div>
                     <div class="col-6">
                         <div class="mb-3">
                             <label for="destaqueSegmentacao" class="form-label">Imagem Destaque</label>
