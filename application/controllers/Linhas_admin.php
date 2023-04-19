@@ -89,6 +89,68 @@ class Linhas_admin extends CI_Controller
 
         $query = $this->linhas_model->getlinhabyID($id);
 
-        
+        $this->form_validation->set_rules('nomeLinhas', 'Nome Linha', 'trim|required');
+        $this->form_validation->set_rules('descLinha', 'Descrição Linha', 'trim|required');
+        $this->form_validation->set_rules('tagsLinha', 'Tags Linha', 'trim|required');
+
+
+        if ($this->form_validation->run() == TRUE) {
+
+            $tituloArq = NULL;
+
+            //Upload Imagem
+            $config['upload_path'] = './upload/docs';
+            $config['allowed_types'] = 'pdf|doc|docx';
+            $config['max_size'] = '100048';
+            $config['encrypt_name'] = TRUE;
+            $this->load->library('upload', $config);
+
+            if ($this->upload->do_upload('arqLinhas')) {
+                $tituloArq = $this->upload->data('file_name');
+            }
+
+            $inputEditLinhas['nome_linha'] = $this->input->post('nomeLinhas');
+            $inputEditLinhas['desc_linha'] = $this->input->post('descLinha');
+            $inputEditLinhas['tags'] = $this->input->post('tagsLinha');
+
+            if ($tituloArq) {
+                $inputEditSegmento['arquivo_download'] = $tituloArq;
+            }
+
+            $this->linhas_model->atualizarLinha($inputEditLinhas, ['id' => $this->input->post('idLinha')]);
+            $this->session->set_flashdata('msg', '<div class="alert alert-success" role="alert">Linha atualizada com sucesso!</div>');
+            redirect('linhas_admin', 'refresh');
+
+
+        } else {
+
+            $data['titulo_pagina'] = 'Editar Segmento';
+            $data['query'] = $query;
+
+            //Load dos arquivos de layout
+            $this->load->view('dashboard/header', $data);
+            $this->load->view('dashboard/linhas/edit');
+            $this->load->view('dashboard/footer');
+        }
+    }
+
+    public function deletarlinha($id = NULL)
+    {
+
+        if (!$id) {
+            $this->session->set_flashdata('msg', '<div class="alert alert-danger" role="alert">Erro! Selecione uma linha para deletar</div>');
+            redirect('linhas_admin', 'refresh');
+        }
+
+        $query = $this->linhas_model->getlinhabyID($id);
+
+        if (!$query) {
+            $this->session->set_flashdata('msg', '<div class="alert alert-danger" role="alert">Erro! Linha não encontrada</div>');
+            redirect('linhas_admin', 'refresh');
+        }
+
+        $this->linhas_model->deletarLinha($id);
+        $this->session->set_flashdata('msg', '<div class="alert alert-success" role="alert">Linha deletada com sucesso!</div>');
+        redirect('linhas_admin', 'refresh');
     }
 }

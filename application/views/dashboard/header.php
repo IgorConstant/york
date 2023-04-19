@@ -77,7 +77,7 @@
                             <?php echo anchor('blog_admin', '<span><i class="fas fa-laptop-code"></i> Blog</span>', array('class' => 'nav-link')) ?>
                         </li>
                         <li class="nav-item">
-                            <?php echo anchor('politica_admin', '<span><i class="fas fa-laptop-code"></i> Politica de Priv.</span>', array('class' => 'nav-link')) ?>
+                            <?php echo anchor('politica', '<span><i class="fas fa-laptop-code"></i> Politica de Priv.</span>', array('class' => 'nav-link')) ?>
                         </li>
                     </ul>
 

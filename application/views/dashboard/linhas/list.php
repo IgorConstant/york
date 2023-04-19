@@ -32,8 +32,8 @@
                             <td><?= $l->id ?></td>
                             <td><?= $l->nome_linha ?></td>
                             <td class="text-center">
-                                <?= anchor('linha_admin/editarlinha/' . $l->id, '<i class="far fa-edit"></i>', array('title' => 'Editar')) ?>
-                                <?= anchor('linha_admin/deletarlinha/' . $l->id, '<i class="far fa-trash-alt"></i>', array('title' => 'Excluir')) ?>
+                                <?= anchor('linhas_admin/editarlinha/' . $l->id, '<i class="far fa-edit"></i>', array('title' => 'Editar')) ?>
+                                <?= anchor('linhas_admin/deletarlinha/' . $l->id, '<i class="far fa-trash-alt"></i>', array('title' => 'Excluir')) ?>
                             </td>
                         </tr>
                     <?php } ?>
